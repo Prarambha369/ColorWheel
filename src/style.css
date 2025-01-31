@@ -1,15 +1,153 @@
-/* src/style.css */
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #f0f0f0;
+      transition: background 0.3s ease;
+    }
 
-h1 {
-  text-align: center;
-}
+    body.dark-mode {
+      background: #121212;
+      color: white;
+    }
 
-canvas {
-  display: block;
-  margin: 0 auto;
-}
+    canvas {
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      margin: 20px;
+    }
+
+    body.dark-mode canvas {
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+
+    .color-info {
+      position: absolute;
+      right: 30px;
+      top: 30px;
+      background: rgba(255,255,255,0.9);
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      font-size: 14px;
+    }
+
+    body.dark-mode .color-info {
+      background: rgba(40,40,40,0.9);
+      color: white;
+    }
+
+    .color-info div {
+      margin: 4px 0;
+    }
+
+    .coordinates {
+      color: #666;
+      font-size: 12px;
+    }
+
+    body.dark-mode .coordinates {
+      color: #aaa;
+    }
+
+    .hex {
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      padding: 8px;
+      border-radius: 50%;
+      transition: transform 0.2s ease;
+    }
+
+    .theme-toggle:hover {
+      transform: scale(1.1);
+    }
+
+    .instructions {
+      position: fixed;
+      bottom: 20px;
+      color: #666;
+      font-size: 14px;
+    }
+
+    body.dark-mode .instructions {
+      color: #aaa;
+    }
+
+    .copied-notice {
+      position: fixed;
+      bottom: 50px;
+      background: #4CAF50;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      animation: slideUp 0.3s ease;
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .color-info {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .color-preview {
+      width: 50px;
+      height: 50px;
+      border-radius: 6px;
+      border: 2px solid #ddd;
+    }
+
+    .color-details {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .dark .color-info {
+      background: rgba(40, 40, 40, 0.9);
+      color: white;
+    }
+
+    .dark .color-preview {
+      border-color: #555;
+    }
+
+    .footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      padding: 10px 0;
+      background: #f0f0f0;
+      color: #666;
+      font-size: 14px;
+      border-top: 1px solid #ddd;
+      font-weight: bold;
+    }
+
+    body.dark-mode .footer {
+      background: #121212;
+      color: #aaa;
+      border-top: 1px solid #333;
+    }
